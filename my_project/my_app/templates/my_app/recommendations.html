@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommendations</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Recommendations</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'assets_list' %}">Assets</a></li>
+                <li><a href="{% url 'coin_list' %}">Coins</a></li>
+                <li><a href="{% url 'recommendations' %}">Recommendations</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="recommendations-container">
+            <h2>Recommended Assets</h2>
+            <ul class="recommendations-list">
+                {% for asset in recommended_assets %}
+                    <li class="recommendation-item">
+                        <h3>{{ asset.name }}</h3>
+                        <p>Type: {{ asset.get_type_display }}</p>
+                        <p>Value: {{ asset.value }}</p>
+                    </li>
+                {% empty %}
+                    <p>No recommendations available.</p>
+                {% endfor %}
+            </ul>
+
+            <h2>Recommended Coins</h2>
+            <ul class="recommendations-list">
+                {% for coin in recommended_coins %}
+                    <li class="recommendation-item">
+                        <h3>{{ coin.name }}</h3>
+                        <p>Value: {{ coin.value }}</p>
+                    </li>
+                {% empty %}
+                    <p>No recommendations available.</p>
+                {% endfor %}
+            </ul>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Omnichain Gaming Platform. All rights reserved.</p>
+    </footer>
+    <!-- JavaScript to handle interactive effects -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const items = document.querySelectorAll('.recommendation-item');
+            
+            items.forEach(item => {
+                item.addEventListener('mouseover', function() {
+                    this.style.backgroundColor = '#f0f0f0';
+                });
+                item.addEventListener('mouseout', function() {
+                    this.style.backgroundColor = 'white';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

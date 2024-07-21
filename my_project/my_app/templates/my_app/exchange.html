@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Exchange{% endblock %}
+
+{% block content %}
+<h1>Exchange Assets</h1>
+<form method="post" action="{% url 'exchange_assets' %}">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="from_asset">From Asset</label>
+        <select class="form-control" id="from_asset" name="from_asset">
+            {% for asset in assets %}
+            <option value="{{ asset.id }}">{{ asset.name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="to_asset">To Asset</label>
+        <select class="form-control" id="to_asset" name="to_asset">
+            {% for asset in assets %}
+            <option value="{{ asset.id }}">{{ asset.name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="amount">Amount</label>
+        <input type="number" class="form-control" id="amount" name="amount" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Exchange</button>
+</form>
+{% endblock %}

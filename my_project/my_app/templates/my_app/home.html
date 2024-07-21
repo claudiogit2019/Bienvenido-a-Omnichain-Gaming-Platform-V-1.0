@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Bienvenido a Omnichain Gaming Platform</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'assets_list' %}">Assets</a></li>
+                <li><a href="{% url 'coin_list' %}">Coins</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <h2>Explora el futuro de los juegos blockchain</h2>
+            <p>Descubre una plataforma donde puedes intercambiar y jugar con activos y monedas en múltiples cadenas de bloques.</p>
+            <a href="{% url 'assets_list' %}" class="btn">Empieza Ahora</a>
+        </section>
+        <section class="features">
+            <div class="feature">
+                <h3>Intercambio de Activos</h3>
+                <p>Comercia tus activos entre diferentes cadenas de bloques fácilmente.</p>
+            </div>
+            <div class="feature">
+                <h3>Soporte Multi-Cadena</h3>
+                <p>Disfruta de una experiencia de juego sin fronteras con soporte para múltiples cadenas.</p>
+            </div>
+            <div class="feature">
+                <h3>Seguridad y Confiabilidad</h3>
+                <p>Tus activos y monedas están seguros con nuestras medidas de seguridad avanzadas.</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Omnichain Gaming Platform. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

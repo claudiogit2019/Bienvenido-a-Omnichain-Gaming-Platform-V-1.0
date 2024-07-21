@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>About Us</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'assets_list' %}">Assets</a></li>
+                <li><a href="{% url 'coin_list' %}">Coins</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="about">
+            <h2>Who We Are</h2>
+            <p>Omnichain Gaming Platform is dedicated to providing a seamless and innovative gaming experience across multiple blockchains. Our platform allows for the trade and play of assets across different blockchain networks, making gaming more versatile and inclusive.</p>
+            <h2>Our Mission</h2>
+            <p>To revolutionize the gaming industry by leveraging blockchain technology to offer a unique and integrated gaming experience.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Omnichain Gaming Platform</p>
+    </footer>
+</body>
+</html>

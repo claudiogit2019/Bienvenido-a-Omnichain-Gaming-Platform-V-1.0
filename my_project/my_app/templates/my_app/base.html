@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Omnichain Gaming Platform{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'my_app/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Omnichain Gaming Platform</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'assets_list' %}">Assets</a></li>
+                <li><a href="{% url 'coin_list' %}">Coins</a></li>
+                <li><a href="{% url 'exchange_assets' %}">Exchange</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2024 Omnichain Gaming Platform</p>
+    </footer>
+</body>
+</html>
